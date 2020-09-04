@@ -1,2 +1,8 @@
 server:
   port: 9999
+github:
+ client:
+  id : 3c283c1af5eacb29e46a
+  secret : 318bf03ce81e7baadaf3d8887ca660e02d6af8a9
+ redirect:
+   url : http://localhost:9999/callback
