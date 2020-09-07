@@ -6,3 +6,11 @@ github:
   secret : 318bf03ce81e7baadaf3d8887ca660e02d6af8a9
  redirect:
    url : http://localhost:9999/callback
+
+#数据库连接
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/newpool_practice?serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+    driver-class-name: com.mysql.jdbc.Driver
