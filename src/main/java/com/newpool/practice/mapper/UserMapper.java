@@ -3,6 +3,7 @@ package com.newpool.practice.mapper;
 import com.newpool.practice.model.User;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Select;
 
 /**
  * @program: practice
@@ -13,6 +14,11 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface UserMapper {
 
+    //插入用户信息
     @Insert("insert into user (account_id,name,token,gmt_create,gmt_modified) value (#{accountId},#{name},#{token},#{gmCreate},#{gmModified})")
     void insertUser(User user);
+
+    //根据token得到用户信息
+    @Select("select * from user where token=#{token}")
+    User findByToken(String token);
 }
