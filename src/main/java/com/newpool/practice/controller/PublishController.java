@@ -42,15 +42,15 @@ public class PublishController {
         model.addAttribute("tag",question.getTag());
 
         if(question.getTitle()==null || question.getTitle() == ""){
-            model.addAttribute("title","请输入标题");
+            model.addAttribute("error","请输入标题");
             return "publish";
         }
         if(question.getDescription()==null || question.getDescription() == ""){
-            model.addAttribute("description","请输入问题");
+            model.addAttribute("error","请输入问题");
             return "publish";
         }
         if(question.getTag()==null || question.getTag() == ""){
-            model.addAttribute("tag","请输入标签");
+            model.addAttribute("error","请输入标签");
             return "publish";
         }
 

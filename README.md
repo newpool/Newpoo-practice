@@ -5,6 +5,7 @@
 [Github OAuth App](https://docs.github.com/cn/developers/apps/creating-an-oauth-app)  
 [markdown](https://www.runoob.com/markdown/md-tutorial.html)  
 [Spring](https://docs.spring.io/spring-boot/docs/2.0.0.RC1/reference/htmlsingle/#boot-features-embedded-database-support)  
+[Thymeleaf](https://www.thymeleaf.org/doc/tutorials/3.0/usingthymeleaf.html#using-theach)
 ## 工具
 
 ## 脚本
