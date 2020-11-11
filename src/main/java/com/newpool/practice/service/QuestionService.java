@@ -39,13 +39,22 @@ public class QuestionService {
     public PaginationDTO list(Integer page, Integer size) {
 
         //实现分页 计算分页
-        Integer pageIndex = (page - 1) * size;
+        //判断当前页数是否大于总页数
+        //或者小于1  然后赋予默认值
         Integer pageCount = questionMapper.selectCount();
-
+        PaginationDTO paginationDTO = new PaginationDTO();
+        paginationDTO.setPagination(pageCount, page, size);
+        if (page > paginationDTO.getTotalPage()) {
+            page = paginationDTO.getTotalPage();
+        }
+        if (page < 1) {
+            page = 1;
+        }
+        Integer pageIndex = (page - 1) * size;
         //问题列表包含用户信息
         List<Question> questionList = questionMapper.selectList(pageIndex, size);
         List<QuestionDTO> questionDTOList = new ArrayList<>();
-        PaginationDTO paginationDTO = new PaginationDTO();
+
         for (Question question : questionList
         ) {
             User user = userMapper.findById(question.getCreator());
@@ -55,7 +64,7 @@ public class QuestionService {
             questionDTOList.add(questionDTO);
         }
         paginationDTO.setQuestions(questionDTOList);
-        paginationDTO.setPagination(pageCount, page, size);
+
         return paginationDTO;
     }
 }
